@@ -1,7 +1,7 @@
 FROM golang:1-alpine3.8 as build
 WORKDIR /go/src/simpleapi
 ADD . /go/src/simpleapi
-RUN apk --no-cache add git \
+RUN apk update && apk --no-cache add git \
     && apk --no-cache add g++ \
     && go get github.com/labstack/echo \
     && go get github.com/mattn/go-sqlite3 \
